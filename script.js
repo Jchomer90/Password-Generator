@@ -29,7 +29,7 @@ function generatePassword() {
   
   // if statement
   // lowerCase.concat(upperCase, symbols, numbers);
-  // var password = "";
+  var password = "";
   var workingArray = "";
   
 
@@ -61,11 +61,12 @@ function generatePassword() {
           
         }
       return workingArray;
-      } 
-      console.log
+      }
+      var newArr = combinedArr(); 
+      console.log(newArr);
       // (workingArray[Math.floor(Math.random() * workingArray.length)]);
-      for (var i =0; i < numOfCharacters.length; i++) {
-        password = combinedArr(Math.floor(Math.random() * combinedArr.length));
+      for (var i =0; i < numOfCharacters; i++) {
+        password = password + newArr[Math.floor(Math.random() * newArr.length)];
         console.log(password);
         console.log(numOfCharacters)
         console.log(workingArray);
