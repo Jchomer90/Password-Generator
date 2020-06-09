@@ -8,7 +8,7 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   
-  
+
   var password = generatePassword();
 
   var passwordText = document.querySelector("#password");
@@ -16,8 +16,6 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
@@ -31,47 +29,47 @@ function generatePassword() {
   
   // if statement
   // lowerCase.concat(upperCase, symbols, numbers);
-  var password = "";
+  // var password = "";
   var workingArray = "";
-
-  function combinedArr() {
-    if (wantSpecialCharacters) {
-      workingArray = workingArray + specialCharacters.concat(workingArray);
-      console.log(workingArray);
-    }
-    if (wantLowerCase) {
-      workingArray = lowerCase.concat(workingArray);
-      console.log(workingArray)
-    }
-    if (wantUpperCase) {
-      workingArray = upperCase.concat(workingArray);
-    }
-    if (wantNumbers) {
-      numbers = numbers.toString();
-      workingArray = numbers.concat(workingArray);
-      console.log(workingArray);
-    }
-  } 
-
   
 
-if (wantSpecialCharacters !== true && wantNumbers !== true && wantLowerCase !== true && wantUpperCase !== true) {
-  alert("You must select to include lease one in your password.");
-}
+  if (wantSpecialCharacters !== true && wantNumbers !== true && wantLowerCase !== true && wantUpperCase !== true) {
+    alert("You must select to include lease one in your password.");
+  }
   else {
   var numOfCharacters = prompt("How many character would you like in your password? Please choose between 8-128 characters.");
   }
-  
-  
-
-  
-  
+    
   
     if (numOfCharacters > 7 && numOfCharacters < 129) {
-    
+
+      function combinedArr() {
+        if (wantSpecialCharacters) {
+          workingArray = workingArray + specialCharacters.concat(workingArray);
+          
+        }
+        if (wantLowerCase) {
+          workingArray = lowerCase.concat(workingArray);
+          
+        }
+        if (wantUpperCase) {
+          workingArray = upperCase.concat(workingArray);
+        }
+        if (wantNumbers) {
+          numbers = numbers.toString();
+          workingArray = numbers.concat(workingArray);
+          
+        }
+      return workingArray;
+      } 
+      console.log
+      // (workingArray[Math.floor(Math.random() * workingArray.length)]);
       for (var i =0; i < numOfCharacters.length; i++) {
-        password = password + combinedArr(Math.floor[Math.random() * combinedArr.length]);
-        
+        password = combinedArr(Math.floor(Math.random() * combinedArr.length));
+        console.log(password);
+        console.log(numOfCharacters)
+        console.log(workingArray);
+       
       }
 
     }
@@ -80,11 +78,5 @@ if (wantSpecialCharacters !== true && wantNumbers !== true && wantLowerCase !== 
     }
     return password;
   
-  
- 
-//   }
-//   }
-//   }
-//   }
 }
 
