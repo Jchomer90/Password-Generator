@@ -45,6 +45,7 @@ function generatePassword() {
 
       function combinedArr() {
         if (wantSpecialCharacters) {
+          wantSpecialCharacters = parseInt(wantSpecialCharacters);
           workingArray = workingArray + specialCharacters.concat(workingArray);
           
         }
@@ -63,13 +64,12 @@ function generatePassword() {
       return workingArray;
       }
       var newArr = combinedArr(); 
-      console.log(newArr);
+
       // (workingArray[Math.floor(Math.random() * workingArray.length)]);
       for (var i =0; i < numOfCharacters; i++) {
         password = password + newArr[Math.floor(Math.random() * newArr.length)];
         console.log(password);
         console.log(numOfCharacters)
-        console.log(workingArray);
        
       }
 
